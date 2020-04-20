@@ -100,6 +100,7 @@ struct elevator_mq_ops {
 	int (*init_hctx)(struct blk_mq_hw_ctx *, unsigned int);
 	void (*exit_hctx)(struct blk_mq_hw_ctx *, unsigned int);
 
+	void (*depth_updated)(struct blk_mq_hw_ctx *);
 	bool (*allow_merge)(struct request_queue *, struct request *, struct bio *);
 	bool (*bio_merge)(struct blk_mq_hw_ctx *, struct bio *);
 	int (*request_merge)(struct request_queue *q, struct request **, struct bio *);
