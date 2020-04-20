@@ -1295,7 +1295,6 @@ struct task_struct {
 	/* Bitmask and counter of trace recursion: */
 	unsigned long			trace_recursion;
 #endif /* CONFIG_TRACING */
-
 #ifdef CONFIG_KCOV
 	/* Coverage collection mode enabled for this task (0 if disabled): */
 	enum kcov_mode			kcov_mode;
@@ -1569,6 +1568,7 @@ extern struct pid *cad_pid;
 #define PF_NO_SETAFFINITY	0x04000000	/* Userland is not allowed to meddle with cpus_allowed */
 #define PF_MCE_EARLY		0x08000000      /* Early kill for mce process policy */
 #define PF_WAKE_UP_IDLE         0x10000000	/* TTWU on an idle CPU */
+#define PF_LOW_POWER		0x10000000	/* Thread is low-power */
 #define PF_PERF_CRITICAL 	0x02000000	/* Thread is performance-critical */
 #define PF_MUTEX_TESTER		0x20000000	/* Thread belongs to the rt mutex tester */
 #define PF_FREEZER_SKIP		0x40000000	/* Freezer should not count it as freezable */
